@@ -1,12 +1,13 @@
 import Benefits from "./benefits";
-import downloadIcon from "../../assets/photos/downloadIcon.svg";
-import createAccIcon from "../../assets/photos/createAccIcon.svg";
-import bankIcon from "../../assets/photos/bankIcon.svg";
-import investIcon from "../../assets/photos/investIcon.svg";
+import downloadIcon from "../../assets/photos/howWork/downloadIcon.svg";
+import createAccIcon from "../../assets/photos/howWork/createAccIcon.svg";
+import bankIcon from "../../assets/photos/howWork/bankIcon.svg";
+import investIcon from "../../assets/photos/howWork/investIcon.svg";
 import howWorkImg from "../../assets/photos/howWorkImg.svg";
 import TitleDescriptionBlock from "../titleDescriptionBlock";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import Ellipse from "../ellipse";
 
 const benefitsItems = [
   {
@@ -36,8 +37,8 @@ const HowWork = () => {
 
   const screenSize = window.innerWidth;
 
-  const SlideScreenSize = screenSize > 390 ? 300 : 500;
-  const desktopSoftSize = screenSize > 390 ? 300 : 1000;
+  const SlideScreenSize = screenSize > 550 ? 300 : 500;
+  const desktopSoftSize = screenSize > 550 ? 300 : 1000;
 
   const slidingSide = `transition-transform duration-1000 ${
     scrollY > SlideScreenSize ? "translate-x-0" : "translate-x-[-150%]"
@@ -47,7 +48,7 @@ const HowWork = () => {
   }`;
 
   return (
-    <div className="grid xl:grid-cols-2 grid-cols-1 gap-24 mt-20 mb-10">
+    <div className="mt-20 mb-10 grid xl:grid-cols-2 grid-cols-1 xl:gap-4 gap-2">
       <div className={`${slidingSide}`}>
         <TitleDescriptionBlock
           title="How FarmVest Works"
@@ -70,9 +71,10 @@ const HowWork = () => {
         </div>
       </div>
       <div
-        className={`bg-[white] bg-opacity-10 rounded-lg p-10 mt-5 ${softSpeech}`}
+        className={`bg-[#FFFFFF] bg-opacity-10 rounded-lg p-10 mt-5 xl:mx-0 mx-2 relative  ${softSpeech} `}
       >
         <img src={howWorkImg} alt="how it work" className="rounded-lg" />
+        <Ellipse firstPosition="top-0 left-10" />
       </div>
     </div>
   );

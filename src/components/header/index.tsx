@@ -1,3 +1,5 @@
+import Button from "../button";
+
 const Header = () => {
   return (
     <div className="w-full h-20 px-4 pt-10 xl:pt-4">
@@ -15,12 +17,14 @@ const Header = () => {
             <p>How it works</p>
           </div>
           <div className="flex items-center space-x-4 text-[#FFFFFF] font-Lato font-thin ">
-            <button className="xl:w-32 w-24 xl:h-12 h-8 xl:py-3 py-1 xl:px-6 px-2 border-[1px] text-sm border-[#FFFFFF] rounded-lg">
+            <Button title="Sign In" border />
+            <Button title="Get Started" />
+            {/* <button className="xl:w-32 w-24 xl:h-12 h-8 xl:py-3 py-1 xl:px-6 px-2 border-[1px] text-sm border-[#FFFFFF] rounded-lg">
               Sign In
             </button>
             <button className="xl:w-32 w-24 xl:h-12 h-8 xl:py-3 py-1 xl:px-6 px-2 text-sm rounded-lg hover:bg-[#7EC11F] bg-[#23B123]">
               Get Started
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

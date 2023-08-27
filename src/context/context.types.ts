@@ -1,5 +1,5 @@
 // context.types.ts
-import { ReactNode, SetStateAction, Dispatch } from "react";
+import { ReactNode } from "react";
 
 export interface ContextTypes {
   scrollY: number;

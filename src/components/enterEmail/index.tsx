@@ -1,9 +1,10 @@
+import Button from "../button";
 import TitleDescriptionBlock from "../titleDescriptionBlock";
 
 const EnterEmail: React.FC = () => {
   return (
     <div>
-      <div className="xl:max-w-[500px] m-auto">
+      <div className="xl:max-w-[500px] mx-auto">
         <TitleDescriptionBlock
           title="The easiest and fastest way to Invest in Agriculture"
           specialWord="Invest"
@@ -12,16 +13,14 @@ const EnterEmail: React.FC = () => {
           descripAddStyle="text-center"
         />
       </div>
-      <div className="w-96 m-auto mt-5">
-        <div className="flex items-center justify-between bg-[#FFFFFF] rounded-lg">
+      <div className="flex items-center justify-center mt-5 mx-2">
+        <div className="flex items-center justify-between bg-[#FFFFFF] p-1 rounded-lg">
           <input
             type="text"
             placeholder="Enter your email"
-            className="h-10 m-1 text-2xl placeholder:text-center border-none outline-none font-Lato font-thin caret-[#72B01D]"
+            className="h-10  m-1 text-2xl placeholder:text-center border-none outline-none font-Lato font-thin caret-[#72B01D]"
           />
-          <button className="p-4 border w-36 m-1 text-[#FFFFFF] hover:bg-[#7EC11F] bg-[#23B123]  text-xs rounded-xl">
-            Get Started
-          </button>
+          <Button title="Get Started" />
         </div>
       </div>
     </div>

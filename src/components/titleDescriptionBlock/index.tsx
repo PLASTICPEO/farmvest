@@ -22,9 +22,7 @@ const TitleDescriptionBlock: React.FC<TitleDescriptionTypes> = ({
         className={`text-[#FFFFFF] text-5xl font-Lora p-4 ${titleAdditionalStyle}`}
         dangerouslySetInnerHTML={{ __html: highlightSpecialWord(title) }}
       ></p>
-      <p
-        className={`text-[#FFFFFF] text-sm font-thin mt-2 p-4 ${descripAddStyle}`}
-      >
+      <p className={`text-[#FFFFFF] text-sm font-thin p-4 ${descripAddStyle}`}>
         {description}
       </p>
     </div>
