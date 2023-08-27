@@ -1,6 +1,6 @@
 import TitleDescriptionBlock from "../titleDescriptionBlock";
 import pathWay from "../../assets/photos/pathway.svg";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import DropDown from "../dropDown";
 

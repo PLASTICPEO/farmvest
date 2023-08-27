@@ -2,9 +2,10 @@ import TitleDescriptionBlock from "../titleDescriptionBlock";
 import CardPhoto1 from "../../assets/photos/card/cardImg1.svg";
 import CardPhoto2 from "../../assets/photos/card/cardImgSecond.svg";
 import Card from "./card";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import Button from "../button";
+import { Link } from "react-router-dom";
 
 const cardItem = [
   {
@@ -65,7 +66,9 @@ const Customers = () => {
         )}
       </div>
       <div className="flex items-center justify-center my-5">
-        <Button title="View All" />
+        <Link to="/customers">
+          <Button title="View All" />
+        </Link>
       </div>
     </div>
   );

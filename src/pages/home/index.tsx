@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import Companies from "../../components/companies";
 import Customers from "../../components/customers";
 import DownloadApp from "../../components/download";
@@ -6,10 +7,14 @@ import EnterEmail from "../../components/enterEmail";
 import HowWork from "../../components/howWork";
 import Pathway from "../../components/pathway";
 import WhyChoosen from "../../components/whyChoosen";
+import { AppContext } from "../../context/AppContext";
 
 const Home = () => {
+  const { contextHolder } = useContext(AppContext);
+
   return (
-    <div className="w-full h-full pt-20">
+    <div className="w-full h-full pt-32">
+      {contextHolder}
       <Ellipse firstPosition="xl:top-[-20%] xl:left-[-10%] top-[-18%] left-[-43%]" />
       <Ellipse firstPosition="xl:top-[-25%] xl:left-[-5%] top-[-15%] left-[-50%]" />
       <div className="container mx-auto overflow-hidden">

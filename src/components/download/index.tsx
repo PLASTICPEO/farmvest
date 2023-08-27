@@ -13,11 +13,19 @@ const DownloadApp = () => {
           specialWord="FarmVest app"
         />
 
-        <Ellipse firstPosition="top-[0] left-[30%] rotate-45" />
-        <Ellipse firstPosition="top-0 left-[7%]" />
+        <Ellipse firstPosition="top-[10%] left-[65%] rotate-45" />
+        <Ellipse firstPosition="top-[10%] left-[0]" />
         <div className="flex items-center justify-center gap-2 m-4">
-          <img src={googlePlay} alt="Google Play" className="cursor-pointer" />
-          <img src={appleStore} alt="App Store" className="cursor-pointer" />
+          <a href="https://play.google.com/store/games">
+            <img
+              src={googlePlay}
+              alt="Google Play"
+              className="cursor-pointer"
+            />
+          </a>
+          <a href="https://developer.apple.com/app-store/">
+            <img src={appleStore} alt="App Store" className="cursor-pointer" />
+          </a>
         </div>
       </div>
     </div>

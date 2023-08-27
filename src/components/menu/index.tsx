@@ -7,7 +7,7 @@ const Menu: React.FC<MenuTypes> = ({ items }) => {
 
   return (
     <div>
-      <div className="absolute top-[0%] left-[0%] w-full bg-[#D5D5D7] font-Lato text-lg xl:font-thin z-50">
+      <div className="fixed top-[0%] left-[0%] w-full bg-[#D5D5D7] font-Lato text-lg xl:font-thin z-50">
         <div onClick={toggleMenu}>
           {isOpen ? (
             <div>

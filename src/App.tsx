@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layout";
 import Home from "./pages/home";
+import CustomersPage from "./pages/customers";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           </DefaultLayout>
         }
       />
+      <Route path="/customers" element={<CustomersPage />} />
     </Routes>
   );
 }
