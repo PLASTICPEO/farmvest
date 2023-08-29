@@ -1,44 +1,40 @@
-import { useState } from "react";
+import { useDropDown } from "./hooks/useDropDown";
 
 const DropDown: React.FC<{ dropDownItems: { text: string; id: number }[] }> = ({
   dropDownItems,
 }) => {
-  const [dropDownToggle, setToggle] = useState(false);
-  const [selecterTitle, setSelected] = useState("What is FarmVest ?");
-
-  const selected = (title: any) => {
-    setSelected(title);
-    setToggle(!dropDownToggle);
-  };
+  const { selecterTitle, setToggle, dropDownToggle, selected } = useDropDown();
 
   return (
-    <div className="xl:mt-2 mt-4 xl:px-4 px-2 xl:w-80  ">
+    <div className="xl:mt-2 mt-4 xl:px-4 px-2 xl:w-80 select-none">
       <div
-        className={`bg-[#FFFFFF] relative bg-opacity-10
+        className={`bg-[#FFFFFF] bg-opacity-10
          w-full p-4 rounded-lg `}
       >
         <div
-          className="flex items-center justify-between cursor-pointer "
+          className="flex items-center justify-between cursor-pointer"
           onClick={() => setToggle(!dropDownToggle)}
         >
-          <p className="text-[black] text-opacity-60 text-sm ">
+          <p className="text-[#FFFFFF] text-opacity-60 text-sm ">
             {selecterTitle}
           </p>
-          <div className="cursor-pointer">
-            <span className="material-symbols-outlined">expand_more</span>
+          <div className="cursor-pointer flex justify-center items-center">
+            <span className="material-symbols-outlined text-[#FFFFFF] ">
+              expand_more
+            </span>
           </div>
         </div>
         {dropDownToggle ? (
           <div
-            className={`bg-[#FFFFFF] xl:w-72 w-full ${
+            className={` w-full border-t-[1px] border-[#B0B3BF] ${
               dropDownToggle ? "bg-opacity-50 " : "bg-opacity-10 "
-            } absolute  rounded-lg`}
+            } `}
           >
             {dropDownItems.map((item: { text: string; id: number }) => (
               <p
                 onClick={() => selected(item.text)}
                 key={item.id}
-                className={`text-[black] text-sm hover:text-opacity-70  cursor-pointer p-1 rounded-lg`}
+                className={`text-[#FFFFFF] text-sm hover:text-opacity-70  cursor-pointer p-1 rounded-lg`}
               >
                 {item.text}
               </p>

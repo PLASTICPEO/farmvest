@@ -6,7 +6,7 @@ const Ellipse: React.FC<{ firstPosition: string }> = ({ firstPosition }) => {
       <img
         src={elipse}
         alt="elipse"
-        className={`absolute ${firstPosition} animate-pulse`}
+        className={`absolute ${firstPosition} animate-pulse z-50`}
       />
     </>
   );

@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import Button from "../button";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const cardItem = [
   {
@@ -22,24 +23,47 @@ const cardItem = [
   },
 ];
 
-const Customers = () => {
+const slideCotainerVariant = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+    transition: {
+      duration: 1,
+    },
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const opacityCotainerVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const Customers: React.FC = () => {
   const { scrollY } = useContext(AppContext);
 
-  const screenSize = window.innerWidth;
-
-  const desktopSoftSize = screenSize > 550 ? 2770 : 3050;
-  const desktopSoftSizeRight = screenSize > 550 ? 3000 : 3300;
-
-  const softSpeech = `transition-opacity duration-1000 ${
-    scrollY > desktopSoftSize ? "opacity-100" : "opacity-0"
-  }`;
-  const softSpeechRight = `transition-opacity duration-1000 ${
-    scrollY > desktopSoftSizeRight ? "opacity-100" : "opacity-0"
-  }`;
+  const slideScreenSize = window.innerWidth > 550 ? 2400 : 3300;
+  const opacityScreenSize = window.innerWidth > 550 ? 2300 : 3100;
 
   return (
     <div>
-      <div className={`${softSpeech}`}>
+      <motion.div
+        variants={opacityCotainerVariant}
+        animate={opacityScreenSize < scrollY ? "visible" : "hidden"}
+      >
         <TitleDescriptionBlock
           title="What Customers have to say"
           specialWord="Customers"
@@ -47,7 +71,7 @@ const Customers = () => {
           titleAdditionalStyle="text-center"
           descripAddStyle="w-[400px] mx-auto"
         />
-      </div>
+      </motion.div>
 
       <div className="grid xl:grid-cols-2 grid-cols-1 xl:gap-8 gap-6">
         {cardItem.map(
@@ -55,13 +79,17 @@ const Customers = () => {
             item: { img: string; description: string; title: string },
             index
           ) => (
-            <div key={index} className={softSpeechRight}>
+            <motion.div
+              key={index}
+              variants={slideCotainerVariant}
+              animate={slideScreenSize < scrollY ? "visible" : "hidden"}
+            >
               <Card
                 img={item.img}
                 description={item.description}
                 title={item.title}
               />
-            </div>
+            </motion.div>
           )
         )}
       </div>

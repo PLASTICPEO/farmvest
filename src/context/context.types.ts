@@ -3,9 +3,12 @@ import { ReactNode } from "react";
 
 export interface ContextTypes {
   scrollY: number;
-  success: any;
-  error: any;
+  success: (e: string) => void;
+  error: (e: string) => void;
   contextHolder: any;
+  scrollPositionTop: () => void;
+  darkMode: () => string;
+  lightMode: () => string;
 }
 
 export interface ContextProviderTypes {

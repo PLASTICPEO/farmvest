@@ -6,7 +6,7 @@ import appleStore from "../../assets/photos/download icons/icon/appstore.svg";
 
 const DownloadApp = () => {
   return (
-    <div className="grid xl:grid-cols-1 grid-cols-1 xl:gap-24 gap-2 relative">
+    <div className="grid xl:grid-cols-1 grid-cols-1 xl:gap-24 gap-2 relative ">
       <div className="mx-auto bg-[#FFFFFF] bg-opacity-10 rounded-lg p-10">
         <TitleDescriptionBlock
           title="Download FarmVest app and invest in your future"

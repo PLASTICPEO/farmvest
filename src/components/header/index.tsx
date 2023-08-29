@@ -1,46 +1,72 @@
-import { useContext, useState, useEffect } from "react";
-import Button from "../button";
 import Menu from "../menu";
+import { Link } from "react-router-dom";
+
+import CustomModal from "../modal";
+import LogInContent from "./login";
+import RegisterContent from "./register";
+import { useHeader } from "./hooks/useHeader";
+import HeaderMenu from "./menu";
+import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 
 const menuItems = [
-  { name: "Home", path: "/home" },
+  { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Features", path: "/features" },
   { name: "How it works", path: "/how-it-works" },
 ];
 
 const Header = () => {
-  const { scrollY } = useContext(AppContext);
-  const [isHeaderVisible, setHeaderVisible] = useState(true);
-
-  useEffect(() => {
-    // Show/hide the header based on scroll position
-    setHeaderVisible(scrollY <= 400);
-  }, [scrollY]);
+  const { isHeaderVisible, loginRef, handleLogin, handleRegister } =
+    useHeader();
+  const windowScreen = window.innerWidth;
+  const { scrollPositionTop } = useContext(AppContext);
 
   const headerClassName = `transition-transform duration-1000 ${
     isHeaderVisible ? "translate-y-0" : "-translate-y-full"
-  } bg-[#263238] w-full xl:h-20 h-28 px-4 pt-10 xl:pt-4 z-40`;
+  } `;
   return (
-    <div className={`${headerClassName} fixed`}>
+    <div
+      className={`${
+        windowScreen > 390 ? headerClassName : ""
+      } fixed bg-[#263238] w-full xl:h-20 h-28 px-4 pt-10 xl:pt-4 z-50`}
+    >
       <Menu items={menuItems} />
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div>
-            <p className="flex items-center text-[#FFFFFF] text-3xl font-Lato font-thin">
-              FarmVest
-            </p>
+            <Link to="/">
+              <p
+                onClick={scrollPositionTop}
+                className="flex items-center text-[#FFFFFF] text-3xl font-Lato font-thin"
+              >
+                FarmVest
+              </p>
+            </Link>
           </div>
-          <div className="xl:flex hidden flex items-center space-x-8 text-[#FFFFFF] font-Lato text-lg font-thin">
-            <p>Home</p>
-            <p>About</p>
-            <p>Features</p>
-            <p>How it works</p>
-          </div>
+          <HeaderMenu items={menuItems} />
           <div className="flex items-center space-x-4 text-[#FFFFFF] font-Lato font-thin ">
-            <Button title="Sign In" border />
-            <Button title="Get Started" />
+            <CustomModal
+              ref={loginRef}
+              title="Welcome Back."
+              triggerProps={{
+                title: "Sign In",
+                border: true,
+                isWhite: true,
+              }}
+            >
+              <LogInContent handleLogin={handleLogin} />
+            </CustomModal>
+            <CustomModal
+              ref={loginRef}
+              title="Join Us."
+              triggerProps={{
+                title: "Get Started",
+                border: false,
+              }}
+            >
+              <RegisterContent handleRegister={handleRegister} />
+            </CustomModal>
           </div>
         </div>
       </div>
