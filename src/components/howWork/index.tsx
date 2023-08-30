@@ -5,7 +5,7 @@ import bankIcon from "../../assets/photos/howWork/bankIcon.svg";
 import investIcon from "../../assets/photos/howWork/investIcon.svg";
 import howWorkImg from "../../assets/photos/howWorkImg.svg";
 import TitleDescriptionBlock from "../titleDescriptionBlock";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import Ellipse from "../ellipse";
 

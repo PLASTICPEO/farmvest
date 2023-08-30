@@ -1,8 +1,6 @@
-import { createContext } from "react";
-import { useEffect, useState } from "react";
-
 import { ContextProviderTypes, ContextTypes } from "./context.types";
-
+import { useEffect, useState } from "react";
+import { createContext } from "react";
 import { message } from "antd";
 
 export const AppContext = createContext<ContextTypes>({
@@ -18,7 +16,6 @@ export const AppContext = createContext<ContextTypes>({
 const ContextProvider = ({ children }: ContextProviderTypes) => {
   const [scrollY, setScrollY] = useState(0);
   const [messageApi, contextHolder] = message.useMessage();
-  const [backgroundMode, setBackgroundMode] = useState("bg-[#263238]");
 
   const lightMode = () => {
     return "bg-[#FFFFFF]";

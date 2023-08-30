@@ -24,6 +24,7 @@ const DropDown: React.FC<{ dropDownItems: { text: string; id: number }[] }> = ({
             </span>
           </div>
         </div>
+
         {dropDownToggle ? (
           <div
             className={` w-full border-t-[1px] border-[#B0B3BF] ${

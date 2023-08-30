@@ -63,8 +63,8 @@ const LogInContent: React.FC<{ handleLogin: (e: string) => void }> = ({
           {
             required: true,
             message: "Please input your password...",
-            min: 8,
           },
+          { min: 8 },
         ]}
       >
         <Input.Password

@@ -67,8 +67,8 @@ const RegisterContent: React.FC<{ handleRegister: (e: string) => void }> = ({
           {
             required: true,
             message: "Please input your password!",
-            min: 8,
           },
+          { min: 8 },
         ]}
         hasFeedback
       >
@@ -87,8 +87,8 @@ const RegisterContent: React.FC<{ handleRegister: (e: string) => void }> = ({
           {
             required: true,
             message: "Please confirm your password!",
-            min: 8,
           },
+          { min: 8 },
           ({ getFieldValue }) => ({
             validator(_, value) {
               if (!value || getFieldValue("password") === value) {
