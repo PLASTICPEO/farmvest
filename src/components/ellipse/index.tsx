@@ -1,6 +1,8 @@
 import elipse from "../../assets/photos/Ellipse123.svg";
 
-const Ellipse: React.FC<{ firstPosition: string }> = ({ firstPosition }) => {
+const CustomEllipse: React.FC<{ firstPosition: string }> = ({
+  firstPosition,
+}) => {
   return (
     <div>
       <img
@@ -12,4 +14,4 @@ const Ellipse: React.FC<{ firstPosition: string }> = ({ firstPosition }) => {
   );
 };
 
-export default Ellipse;
+export default CustomEllipse;

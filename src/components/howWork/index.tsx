@@ -1,15 +1,16 @@
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
+import { motion } from "framer-motion";
+
+import TitleDescriptionBlock from "../titleDescriptionBlock";
+import CustomEllipse from "../ellipse";
 import Benefits from "./benefits";
+
 import downloadIcon from "../../assets/photos/howWork/downloadIcon.svg";
 import createAccIcon from "../../assets/photos/howWork/createAccIcon.svg";
 import bankIcon from "../../assets/photos/howWork/bankIcon.svg";
 import investIcon from "../../assets/photos/howWork/investIcon.svg";
 import howWorkImg from "../../assets/photos/howWorkImg.svg";
-import TitleDescriptionBlock from "../titleDescriptionBlock";
-import { useContext } from "react";
-import { AppContext } from "../../context/AppContext";
-import Ellipse from "../ellipse";
-
-import { motion } from "framer-motion";
 
 const benefitsItems = [
   {
@@ -102,7 +103,7 @@ const HowWork = () => {
           className={`bg-[#FFFFFF] bg-opacity-10 rounded-lg p-10 mt-5 xl:mx-0 mx-2 relative  `}
         >
           <img src={howWorkImg} alt="how it work" className="rounded-lg" />
-          <Ellipse firstPosition="top-0 left-10" />
+          <CustomEllipse firstPosition="top-0 left-10" />
         </div>
       </motion.div>
     </div>

@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <div
       className={`${
-        windowScreen > 390 ? headerClassName : ""
+        windowScreen > 550 ? headerClassName : ""
       } fixed bg-[#263238] bg-opacity-90 w-full xl:h-20 h-28 px-4 pt-10 xl:pt-4 z-50`}
     >
       <Menu items={menuItems} />

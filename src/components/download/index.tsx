@@ -1,5 +1,5 @@
-import Ellipse from "../ellipse";
 import TitleDescriptionBlock from "../titleDescriptionBlock";
+import CustomEllipse from "../ellipse";
 
 import googlePlay from "../../assets/photos/download icons/icon/Group.svg";
 import appleStore from "../../assets/photos/download icons/icon/appstore.svg";
@@ -13,8 +13,8 @@ const DownloadApp = () => {
           specialWord="FarmVest app"
         />
 
-        <Ellipse firstPosition="top-[10%] left-[65%] rotate-45" />
-        <Ellipse firstPosition="top-[10%] left-[0]" />
+        <CustomEllipse firstPosition="top-[10%] left-[65%] rotate-45" />
+        <CustomEllipse firstPosition="top-[10%] left-[0]" />
         <div className="flex items-center justify-center gap-2 m-4">
           <a href="https://play.google.com/store/games">
             <img
