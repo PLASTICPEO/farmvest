@@ -18,9 +18,6 @@ const LogInContent: React.FC<{ handleLogin: (e: string) => void }> = ({
       email: "${label} is not a valid email!",
       number: "${label} is not a valid number!",
     },
-    number: {
-      range: "${label} must be between ${min} and ${max}",
-    },
   };
 
   return (
@@ -64,7 +61,6 @@ const LogInContent: React.FC<{ handleLogin: (e: string) => void }> = ({
             required: true,
             message: "Please input your password...",
           },
-          { min: 8 },
         ]}
       >
         <Input.Password
